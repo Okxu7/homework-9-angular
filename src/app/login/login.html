@@ -1,0 +1,26 @@
+<p>login works!</p>
+<h2>Вхід у систему</h2>
+
+<form (ngSubmit)="onLogin()" autocomplete="off" style="display: flex; flex-direction: column; gap: 10px; max-width: 260px;">
+  <input
+    type="text"
+    name="username"
+    [(ngModel)]="username"
+    placeholder="Логін (Денис або Михайло)"
+    autocomplete="off"
+    required
+  >
+  <input
+    type="password"
+    name="password"
+    [(ngModel)]="password"
+    placeholder="Пароль (1812 або 1911)"
+    autocomplete="new-password"
+    required
+  >
+  <button type="submit" style="padding: 8px; cursor: pointer;">Увійти</button>
+</form>
+
+<p *ngIf="errorMessage" style="color: red; margin-top: 10px;">
+  {{ errorMessage }}
+</p>

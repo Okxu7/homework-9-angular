@@ -1,0 +1,33 @@
+<p>products works!</p>
+<h2>Каталог чохлів для телефонів</h2>
+
+<div style="margin-bottom: 20px; display: flex; gap: 15px;">
+  <label style="cursor: pointer;">
+    <input type="radio" name="colorFilter" value="all" [checked]="selectedColor === 'all'" (change)="onColorChange('all')">
+    Усі кольори
+  </label>
+
+  <label style="cursor: pointer;">
+    <input type="radio" name="colorFilter" value="black" [checked]="selectedColor === 'black'" (change)="onColorChange('black')">
+    Чорний
+  </label>
+
+  <label style="cursor: pointer;">
+    <input type="radio" name="colorFilter" value="blue" [checked]="selectedColor === 'blue'" (change)="onColorChange('blue')">
+    Синій
+  </label>
+
+  <label style="cursor: pointer;">
+    <input type="radio" name="colorFilter" value="red" [checked]="selectedColor === 'red'" (change)="onColorChange('red')">
+    Червоний
+  </label>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 15px;">
+  <div *ngFor="let item of filteredCases" style="border: 1px solid #cbd5e1; border-radius: 8px; padding: 15px; width: 240px;">
+    <h3 style="margin-top: 0;">{{ item.name }}</h3>
+    <p>{{ item.description }}</p>
+    <p><strong>Колір:</strong> {{ item.colorLabel }}</p>
+    <p><strong>Ціна:</strong> {{ item.price }} грн</p>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<p>moderator works!</p>
+<h2>Сторінка модератора</h2>
+
+<h3 *ngIf="userName">Привіт, {{ userName }}!</h3>
+
+<p *ngIf="!userName">
+  Ви не авторизовані. <a routerLink="/login">Перейти на сторінку входу</a>
+</p>
